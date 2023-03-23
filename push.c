@@ -15,13 +15,13 @@ void push(stack_t **stack, unsigned int line_number)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		perror("Error: malloc failed");
+		perror("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	
+
 	if (!data)
 	{
-		fprintf(stderr, "L%i: usage: push integer", line_number);
+		fprintf(stderr, "L%i: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 

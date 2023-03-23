@@ -7,10 +7,10 @@
  * @line_number: the current line number of a bytecode file
  */
 void swap(stack_t **stack, unsigned int line_number)
-{       
-        stack_t *current, *previous;
+{
+	stack_t *current, *previous;
 	int temp, count;
-        
+
 	current = previous = *stack;
 	count = 0;
 	while (current->next)
@@ -20,13 +20,12 @@ void swap(stack_t **stack, unsigned int line_number)
 		count++;
 	}
 
-        if (count < 2)
-        {       
-                fprintf(stderr, "L%d: can't swap, stack too short", line_number);
-                exit(EXIT_FAILURE);
-        }
+	if (count < 2)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	temp = previous->n;
 	previous->n = current->n;
 	current->n = temp;
 }
-

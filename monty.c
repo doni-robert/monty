@@ -6,7 +6,7 @@
  * @argc: argument count
  * @argv: argument vector
  */
-int data;
+int data = 0;
 
 int main(int argc, char **argv)
 {
@@ -34,7 +34,6 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	
 	while(fgets(buf, 100, fd) != NULL)
 	{
 		if (100 - strlen(buf) < sizeof(buf))
@@ -55,7 +54,7 @@ int main(int argc, char **argv)
 		}
 		else
 			data = atoi(arg);
-		
+
 		fptr = get_op(cmd);
 		if (fptr == NULL)
 		{
