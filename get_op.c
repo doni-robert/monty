@@ -13,6 +13,15 @@ void (*get_op(char *name))(stack_t **stack, unsigned int line_number)
 	instruction_t instructs[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
+		{"sub", sub},
+		{"div", monty_div},
+		{"mul", monty_mul},
+		{"mod", monty_mod},
 		{NULL, NULL}
 	};
 

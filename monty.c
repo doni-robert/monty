@@ -44,6 +44,8 @@ int main(int argc, char **argv)
 
 		line_number++;
 		cmd = strtok(buf, " ");
+		if (cmd[0] == '#')
+			continue;
 
 		arg = strtok(NULL, " ");
 		if (arg == NULL)
