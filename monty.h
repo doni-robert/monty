@@ -41,11 +41,16 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
 void push(stack_t **stack, unsigned int line_number);
 void (*get_op(char *name))(stack_t **stack, unsigned int line_number);
 char *_memcpy(char *dest, char *src, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void pall(stack_t **stack, unsigned int line_number);
+char **read(FILE *fp);
+void exec(char **cmd, stack_t **stack);
+void malloc_fail(void);
+
 
 
 
