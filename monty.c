@@ -6,11 +6,11 @@
  * @argc: argument count
  * @argv: argument vector
  */
-int data = 0;
+int *data = NULL;
 
 int main(int argc, char **argv)
 {
-	int line_number = 0;
+	int x, i = 0, line_number = 0;
 	char *cmd, *buf, *arg;
 	void (*fptr)(stack_t **stack, unsigned int line_number);
 	stack_t **stack;
@@ -47,13 +47,29 @@ int main(int argc, char **argv)
 			continue;
 
 		arg = strtok(NULL, " ");
+		if (arg != NULL)
+		{
+			while (arg[i])
+			{
+				if (isdigit(arg[i] == 0))
+				{
+					arg = NULL;
+					break;
+				}
+				i++;
+			}
+			if (arg != NULL)
+			{
+				x = atoi(arg);
+				data = &x;
+			}
+		}
 		if (arg == NULL)
 		{
 			cmd[strlen(cmd) - 1] = '\0';
-			data = 0;
+			data = NULL;
 		}
-		else
-			data = atoi(arg);
+
 
 		fptr = get_op(cmd);
 		if (fptr == NULL)

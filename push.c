@@ -19,13 +19,13 @@ void push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if (!data)
+	if (data == NULL)
 	{
 		fprintf(stderr, "L%i: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	new->n = (data);
+	new->n = *data;
 	new->next = NULL;
 	if (stack == NULL)
 		new->prev = NULL;
