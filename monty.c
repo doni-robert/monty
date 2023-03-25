@@ -46,7 +46,6 @@ int main(int argc, char **argv)
 			continue;
 
 		arg = strtok(NULL, " ");
-		printf("%s\n", arg);
 		if (arg != NULL)
 		{
 			while (arg[i])
@@ -70,7 +69,6 @@ int main(int argc, char **argv)
 			data = NULL;
 		}
 
-		printf("%s\n", cmd);
 		fptr = get_op(cmd);
 		if (fptr == NULL)
 		{
