@@ -24,14 +24,14 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
 	fd = fopen(argv[1], "r");
 	if (fd == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while(fgets(buf, 100, fd) != NULL)
@@ -72,7 +72,7 @@ int main(int argc, char **argv)
 		fptr = get_op(cmd);
 		if (fptr == NULL)
 		{
-			fprintf(stderr, "L%i: unknown instruction %s", line_number, cmd);
+			fprintf(stderr, "L%i: unknown instruction %s\n", line_number, cmd);
 			exit(EXIT_FAILURE);
 		}
 		fptr(stack, line_number);
