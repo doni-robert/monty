@@ -40,13 +40,13 @@ int main(int argc, char **argv)
 		{
 			_realloc(buf, 100, 200);
 		}
-
 		line_number++;
 		cmd = strtok(buf, " ");
-		if (cmd[0] == '#')
+		if (cmd[0] == '#' || strcmp(cmd, "\n") == 0)
 			continue;
 
 		arg = strtok(NULL, " ");
+		printf("%s\n", arg);
 		if (arg != NULL)
 		{
 			while (arg[i])
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 			data = NULL;
 		}
 
-
+		printf("%s\n", cmd);
 		fptr = get_op(cmd);
 		if (fptr == NULL)
 		{
